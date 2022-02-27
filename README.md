@@ -4,7 +4,11 @@
  
  # Team Members:  
  Modibo Traore, mt16g 
+ 
  David Lee, dyl20b 
+ 
  Alejandro Osuna, ao18f 
+ 
  Daniel Kovacs, djk19f 
+ 
  Matthew Papageorge, mp20gu
