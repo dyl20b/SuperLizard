@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LizardScript : MonoBehaviour
 {
@@ -18,5 +19,15 @@ public class LizardScript : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.DownArrow))
             rb.MovePosition(rb.position + Vector2.down);
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Car")
+        {
+            Debug.Log("GAME OVER");
+            ScoreScript.CurrentScore = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
