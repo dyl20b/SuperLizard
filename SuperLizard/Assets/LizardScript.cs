@@ -8,17 +8,31 @@ public class LizardScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+    if (Input.GetKeyDown(KeyCode.RightArrow))
             rb.MovePosition(rb.position + Vector2.right);
+        {
+            if (rb.position.x < 3)
+                rb.MovePosition(rb.position + Vector2.right);
+        }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
             rb.MovePosition(rb.position + Vector2.left);
+        {
+            if (rb.position.x > -3)
+                rb.MovePosition(rb.position + Vector2.left);
+        }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
             rb.MovePosition(rb.position + Vector2.up);
+        {
+            if (rb.position.y < 4)
+                rb.MovePosition(rb.position + Vector2.up);
+        }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
             rb.MovePosition(rb.position + Vector2.down);
 
+        {
+            if(rb.position.y > -4)
+                rb.MovePosition(rb.position + Vector2.down);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
