@@ -9,6 +9,15 @@ In its current form, Super Lizard is a fully functional Frogger base game with n
  Video of current iteration demo:
  https://youtu.be/eW11Zualfqk
  
+ RD Document:
+ https://docs.google.com/document/d/1MLYxarpdqqK_vwq42xlkPOLmo4R-tOXyvw_jEhovtmU/edit?usp=sharing
+ 
+ IT Document:
+ https://docs.google.com/document/d/1mZwAhAylChtPs5T9Hmt-AtUWU-BaiuxTc_lfrhx-aDs/edit?usp=sharing
+ 
+ Progress Report:
+ https://docs.google.com/document/d/18YftfYR7xwwkZ3izzd2szTDVYK68-XJKwO0t7S_47wk/edit?usp=sharing
+ 
  
  # Documentation:
  
