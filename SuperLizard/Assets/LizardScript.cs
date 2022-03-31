@@ -27,7 +27,7 @@ public class LizardScript : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            if(rb.position.y > -4)
+            if (rb.position.y > -4)
                 rb.MovePosition(rb.position + Vector2.down);
         }
     }
@@ -39,6 +39,12 @@ public class LizardScript : MonoBehaviour
             Debug.Log("GAME OVER");
             ScoreScript.CurrentScore = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (collision.tag == "Bug")
+        {
+            Debug.Log("Yummy Grub!");
+            ScoreScript.CurrentScore += 10;
+            Destroy(collision.gameObject);
         }
     }
 }
