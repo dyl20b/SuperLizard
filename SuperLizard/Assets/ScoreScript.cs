@@ -13,4 +13,9 @@ public class ScoreScript : MonoBehaviour
     {
         scoreText.text = CurrentScore.ToString();
     }
+
+    private void Update()
+    {
+        scoreText.text = CurrentScore.ToString();
+    }
 }
