@@ -6,7 +6,6 @@ public class BugSpawner : MonoBehaviour
 {
     public float destroyTime = 5f;
     public GameObject bug;
-    public GameObject[] bugs; // for object reference. without I was getting a bug
     public Transform[] spawnPoints;
     public List<Transform> possibleSpawns = new List<Transform>();
 
@@ -26,11 +25,10 @@ public class BugSpawner : MonoBehaviour
         if (possibleSpawns.Count > 0)
         {
             int randomIndex = Random.Range(0, possibleSpawns.Count);
-            int spawnObject = Random.Range(0, bugs.Length);  // for object reference
             Transform spawnPoint = spawnPoints[randomIndex];
 
             // create as a game object to allow deletion
-            GameObject bugClone = Instantiate(bugs[spawnObject], possibleSpawns[randomIndex].position, possibleSpawns[randomIndex].rotation) as GameObject;
+            GameObject bugClone = Instantiate(bug, possibleSpawns[randomIndex].position, possibleSpawns[randomIndex].rotation) as GameObject;
             bugClone.GetComponent<Destroy>().mySpawnPoint = possibleSpawns[randomIndex];
 
             possibleSpawns.RemoveAt(randomIndex);
