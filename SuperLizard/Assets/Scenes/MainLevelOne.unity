@@ -235,8 +235,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 3
-  car: {fileID: 0}
-  spawnPoints: []
+  spawnDelay: 0.3
+  car: {fileID: 1418102166}
+  spawnPoints:
+  - {fileID: 1816746047}
+  - {fileID: 1467756496}
+  - {fileID: 117430314}
+  - {fileID: 2059854897}
+  nextTimeToSpawn: 0
 --- !u!4 &67955935
 Transform:
   m_ObjectHideFlags: 0
@@ -300,12 +306,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 3
+  spawnDelay: 0.3
   car: {fileID: 1418102166}
-  spawnPoints:
-  - {fileID: 1816746047}
-  - {fileID: 1467756496}
-  - {fileID: 117430314}
-  - {fileID: 2059854897}
+  spawnPoints: []
+  nextTimeToSpawn: 0
 --- !u!1 &121285909
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,12 +916,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 3
+  spawnDelay: 0.3
   car: {fileID: 1418102166}
-  spawnPoints:
-  - {fileID: 1816746047}
-  - {fileID: 471014488}
-  - {fileID: 117430314}
-  - {fileID: 2059854897}
+  spawnPoints: []
+  nextTimeToSpawn: 0
 --- !u!1 &486884047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,7 +2242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1119567786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2675,12 +2677,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 3
+  spawnDelay: 0.3
   car: {fileID: 1418102166}
-  spawnPoints:
-  - {fileID: 1816746047}
-  - {fileID: 1467756496}
-  - {fileID: 117430314}
-  - {fileID: 2059854897}
+  spawnPoints: []
+  nextTimeToSpawn: 0
 --- !u!1 &1502469284
 GameObject:
   m_ObjectHideFlags: 0
@@ -3240,12 +3240,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 3
+  spawnDelay: 0.3
   car: {fileID: 1418102166}
-  spawnPoints:
-  - {fileID: 1816746047}
-  - {fileID: 1467756496}
-  - {fileID: 117430314}
-  - {fileID: 2059854897}
+  spawnPoints: []
+  nextTimeToSpawn: 0
 --- !u!4 &1816746047
 Transform:
   m_ObjectHideFlags: 0
@@ -3916,12 +3914,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyTime: 3
+  spawnDelay: 0.3
   car: {fileID: 1418102166}
-  spawnPoints:
-  - {fileID: 1816746047}
-  - {fileID: 1467756496}
-  - {fileID: 117430314}
-  - {fileID: 2059854897}
+  spawnPoints: []
+  nextTimeToSpawn: 0
 --- !u!1 &2083218845
 GameObject:
   m_ObjectHideFlags: 0
