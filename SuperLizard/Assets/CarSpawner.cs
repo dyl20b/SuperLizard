@@ -5,21 +5,36 @@ public class CarSpawner : MonoBehaviour
 {
     public float destroyTime = 3f;
 
+    public float spawnDelay = .3f;
+
     public GameObject car;
 
     public Transform[] spawnPoints;
 
+     public float nextTimeToSpawn;
+    private int check, randomIndex;
+
     void Start()
     {
-        InvokeRepeating("SpawnCar", 0f, 1.5f);
+ 
+        nextTimeToSpawn = Random.Range(0f, 1f);
     }
 
-    void SpawnCar()
+    void FixedUpdate()
     {
-        int randomIndex = Random.Range(0, spawnPoints.Length);
-        Transform spawnPoint = spawnPoints[randomIndex];
+        nextTimeToSpawn -= Time.deltaTime;
+        randomIndex = Random.Range(0, spawnPoints.Length);
+        if (nextTimeToSpawn <= 0.0f && check != randomIndex)
+        {
+           
+            Transform spawnPoint = spawnPoints[randomIndex];
 
-        GameObject carClone = Instantiate(car, spawnPoint.position, spawnPoint.rotation) as GameObject;
-        Destroy(carClone, destroyTime);
+            Instantiate(car, spawnPoint.position, spawnPoint.rotation);
+             nextTimeToSpawn = Random.Range(0f, 1f);
+
+            check = randomIndex;
+        }
     }
-}
+
+   
+  
