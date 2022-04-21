@@ -11,12 +11,12 @@ public class CarSpawner : MonoBehaviour
 
     public Transform[] spawnPoints;
 
-     public float nextTimeToSpawn;
+    public float nextTimeToSpawn;
     private int check, randomIndex;
 
     void Start()
     {
- 
+
         nextTimeToSpawn = Random.Range(0f, 1f);
     }
 
@@ -26,15 +26,16 @@ public class CarSpawner : MonoBehaviour
         randomIndex = Random.Range(0, spawnPoints.Length);
         if (nextTimeToSpawn <= 0.0f && check != randomIndex)
         {
-           
+
             Transform spawnPoint = spawnPoints[randomIndex];
 
             Instantiate(car, spawnPoint.position, spawnPoint.rotation);
-             nextTimeToSpawn = Random.Range(0f, 1f);
+            nextTimeToSpawn = Random.Range(0f, 1f);
 
             check = randomIndex;
         }
     }
+}
 
    
   
