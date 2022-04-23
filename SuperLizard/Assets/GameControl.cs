@@ -9,6 +9,6 @@ public class GameControl : MonoBehaviour
     public void ResetGame()
     {
         ScoreScript.CurrentScore = 0;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

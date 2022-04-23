@@ -38,7 +38,7 @@ public class LizardScript : MonoBehaviour
         {
             Debug.Log("GAME OVER");
 
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
 
         }
         if (collision.tag == "Bug")
