@@ -34,11 +34,12 @@ public class LizardScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Car")
+        if (collision.tag == "Car")
         {
             Debug.Log("GAME OVER");
-            ScoreScript.CurrentScore = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+            SceneManager.LoadScene(1);
+
         }
         if (collision.tag == "Bug")
         {
@@ -47,4 +48,6 @@ public class LizardScript : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
 }
+
