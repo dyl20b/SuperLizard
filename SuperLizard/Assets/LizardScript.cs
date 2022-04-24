@@ -1,11 +1,16 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class LizardScript : MonoBehaviour
 {
-
+    Vector3 originalPos;
     public Rigidbody2D rb;
 
+    private void Start()
+    {
+        originalPos = gameObject.transform.position;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -36,10 +41,8 @@ public class LizardScript : MonoBehaviour
     {
         if (collision.tag == "Car")
         {
-            Debug.Log("GAME OVER");
-
-            SceneManager.LoadScene(2);
-
+            GameControl.health -= 1;
+            gameObject.transform.position = originalPos;
         }
         if (collision.tag == "Bug")
         {
