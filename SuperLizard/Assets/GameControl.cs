@@ -5,67 +5,41 @@ using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
-    public static int health, count;
-    public GameObject heart1, heart2, heart3;
-    public void Start()
+    public static int health = 3, count = 0;
+    public GameObject[] hearts;
+
+    public void Awake()
     {
-        health = 3;
-        heart1.gameObject.SetActive(true);
-        heart2.gameObject.SetActive(true);
-        heart3.gameObject.SetActive(true);
-        count = 0;
+        UpdateHearts();
     }
+
+    public void UpdateHearts()
+    {
+        for(int h=0; h < hearts.Length; h++)
+        {
+            hearts[h].gameObject.SetActive(health > h);
+        }
+    }
+
     public void Update()
     {
         if (health > 3)
         {
             health = 3;
         }
-        switch (health)
+        UpdateHearts();
+        if(health == 0 && count == 0)
         {
-            case 3:
-                if (count == 0)
-                {
-                    heart1.gameObject.SetActive(true);
-                    heart2.gameObject.SetActive(true);
-                    heart3.gameObject.SetActive(true);
-                    count++;
-                }
-                break;
-            case 2:
-                if (count == 1)
-                {
-                    heart1.gameObject.SetActive(true);
-                    heart2.gameObject.SetActive(true);
-                    heart3.gameObject.SetActive(false);
-                    count++;
-                }
-                break;
-            case 1:
-                if (count == 2)
-                {
-                    heart1.gameObject.SetActive(true);
-                    heart2.gameObject.SetActive(false);
-                    heart3.gameObject.SetActive(false);
-                    count++;
-                }
-                break;
-            case 0:
-                if (count == 3)
-                {
-                    count++;
-                    heart1.gameObject.SetActive(false);
-                    heart2.gameObject.SetActive(false);
-                    heart3.gameObject.SetActive(false);
-                    Debug.Log("GAME OVER");
-                    SceneManager.LoadScene(2);
-                }
-                break;
+            count = 1;
+            Debug.Log("GAME OVER");
+            SceneManager.LoadScene(2);
         }
     }
     public void ResetGame()
     {
         ScoreScript.CurrentScore = 0;
+        health = 3;
+        count = 0;
         SceneManager.LoadScene(1);
     }
 }
