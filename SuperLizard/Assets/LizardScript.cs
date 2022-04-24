@@ -12,17 +12,17 @@ public class LizardScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (rb.position.x < 3)
+            if (rb.position.x < 6)
                 rb.MovePosition(rb.position + Vector2.right);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (rb.position.x > -3)
+            if (rb.position.x > -6)
                 rb.MovePosition(rb.position + Vector2.left);
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (rb.position.y < 4)
+            if (rb.position.y < 8)
                 rb.MovePosition(rb.position + Vector2.up);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))

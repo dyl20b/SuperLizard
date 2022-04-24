@@ -29,10 +29,11 @@ public class CarSpawner : MonoBehaviour
 
             Transform spawnPoint = spawnPoints[randomIndex];
 
-            Instantiate(car, spawnPoint.position, spawnPoint.rotation);
+            GameObject carClone = Instantiate(car, spawnPoint.position, spawnPoint.rotation);
             nextTimeToSpawn = Random.Range(0f, 1f);
 
             check = randomIndex;
+            Destroy(carClone, destroyTime);
         }
     }
 }
