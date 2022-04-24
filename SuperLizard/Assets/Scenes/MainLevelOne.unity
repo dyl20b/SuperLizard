@@ -1448,9 +1448,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff69af5ee3b407e4a8b0f4e0b577074d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heart1: {fileID: 1529326212}
-  heart2: {fileID: 1563604072}
-  heart3: {fileID: 1412920923}
+  hearts:
+  - {fileID: 1529326212}
+  - {fileID: 1563604072}
+  - {fileID: 1412920923}
 --- !u!4 &1127956223
 Transform:
   m_ObjectHideFlags: 0
