@@ -4,34 +4,32 @@ using System.Collections.Generic;
 
 public class BugSpawner : MonoBehaviour
 {
-    public float destroyTime = 5f;
+    public float destroyTime = 10f;
+    public float spawnDelay = 10f;
     public GameObject bug;
     public Transform[] spawnPoints;
-    public List<Transform> possibleSpawns = new List<Transform>();
+    public float nextTimeToSpawn;
+    private int check, randomIndex;
 
     void Start()
     {
-        // loop to fill the possible spawn points
-        for(int i = 0; i < spawnPoints.Length; i++)
-        {
-            possibleSpawns.Add(spawnPoints[i]);
-        }
-
-        InvokeRepeating("SpawnBug", 0f, 5f);
+        nextTimeToSpawn = Random.Range(0f, 1f);
     }
 
-    void SpawnBug()
+    void FixedUpdate()
     {
-        if (possibleSpawns.Count > 0)
+        nextTimeToSpawn -= Time.deltaTime;
+        randomIndex = Random.Range(0, spawnPoints.Length);
+        if (nextTimeToSpawn <= 0.0f && check != randomIndex)
         {
-            int randomIndex = Random.Range(0, possibleSpawns.Count);
+
             Transform spawnPoint = spawnPoints[randomIndex];
 
-            // create as a game object to allow deletion
-            GameObject bugClone = Instantiate(bug, possibleSpawns[randomIndex].position, possibleSpawns[randomIndex].rotation) as GameObject;
-            bugClone.GetComponent<Destroy>().mySpawnPoint = possibleSpawns[randomIndex];
+            GameObject bugClone = Instantiate(bug, spawnPoint.position, spawnPoint.rotation);
+            nextTimeToSpawn = Random.Range(0f, 1f);
 
-            possibleSpawns.RemoveAt(randomIndex);
+            check = randomIndex;
+            Destroy(bugClone, destroyTime);
         }
     }
 }
