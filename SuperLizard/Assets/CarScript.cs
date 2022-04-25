@@ -7,7 +7,7 @@ public class CarScript : MonoBehaviour{
     public float speed = 1f;
 
     private void Start(){
-        speed = Random.Range(5f, 8f);
+        speed = Random.Range(10f, 15f);
     }
 
     // Update is called once per frame

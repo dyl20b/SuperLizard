@@ -14,22 +14,16 @@ public class BugSpawner : MonoBehaviour
     void Start()
     {
         nextTimeToSpawn = Random.Range(0f, 1f);
-    }
-
-    void FixedUpdate()
-    {
-        nextTimeToSpawn -= Time.deltaTime;
-        randomIndex = Random.Range(0, spawnPoints.Length);
-        if (nextTimeToSpawn <= 0.0f && check != randomIndex)
+        for (int i = 0; i <= 5; i++)
         {
-
-            Transform spawnPoint = spawnPoints[randomIndex];
-
-            GameObject bugClone = Instantiate(bug, spawnPoint.position, spawnPoint.rotation);
-            nextTimeToSpawn = Random.Range(0f, 1f);
-
-            check = randomIndex;
-            Destroy(bugClone, destroyTime);
+            randomIndex = Random.Range(0, spawnPoints.Length);
+            if (randomIndex < spawnPoints.Length)
+            {
+                Transform spawnPoint = spawnPoints[randomIndex];
+                GameObject bugClone = Instantiate(bug, spawnPoint.position, spawnPoint.rotation);
+                nextTimeToSpawn = Random.Range(0f, 1f);
+            }
         }
     }
+
 }
