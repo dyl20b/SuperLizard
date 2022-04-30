@@ -50,6 +50,11 @@ public class LizardScript : MonoBehaviour
             ScoreScript.CurrentScore += 10;
             Destroy(collision.gameObject);
         }
+        if (collision.tag == "Rain")
+        {
+            GameControl.health -= 1;
+            gameObject.transform.position = originalPos;
+        }
     }
 
 }

@@ -3,10 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
-    private void OnTriggerEnter2D()
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("WINNER");
-        ScoreScript.CurrentScore += 100;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (col.gameObject.name == "Lizard")
+        {
+            Debug.Log("WINNER");
+            ScoreScript.CurrentScore += 100;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
