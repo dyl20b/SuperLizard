@@ -11,7 +11,7 @@
 In its current form, Super Lizard is a fully functional Frogger base game with a limited life system. There is an existing main level that is repeated and points that are tracked for completion or for game overs. Points are also able to be picked up via randomly spawned bugs on the roads. Cars currently effectively delete themselves while still producing more cars, this bug was fixed by making the clones a seperate game object which was deleted after a yielded time. At the moment there exists the implementation for raindrop enemies that the lizard has to avoid to not lose lives but its missing the collision to remove health at this current state.
  
  Video of current iteration demo:
- https://youtu.be/eW11Zualfqk
+https://youtu.be/zjFVz69xf_8
  
  RD Document:
  https://docs.google.com/document/d/1MLYxarpdqqK_vwq42xlkPOLmo4R-tOXyvw_jEhovtmU/edit?usp=sharing
